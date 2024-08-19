@@ -20,9 +20,10 @@ app.use(cookieParser());
 
 // CORS configuration
 app.use(cors({
-    origin: process.env.FRONTEND_URL, // Use the FRONTEND_URL from the .env file
-    credentials: true // Allow credentials
-  }));
+  origin: 'https://uskrentalcar.netlify.app', // Ensure this matches your frontend URL without a trailing slash
+  credentials: true // Allow credentials (cookies, authorization headers, etc.)
+}));
+
 
 // Import routes
 const authRoutes = require('./routes/authRoutes');
